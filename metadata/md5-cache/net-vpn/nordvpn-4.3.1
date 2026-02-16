@@ -1,0 +1,14 @@
+BDEPEND=virtual/pkgconfig
+DEFINED_PHASES=install postinst postrm unpack
+DESCRIPTION=NordVPN native client
+EAPI=8
+HOMEPAGE=https://nordvpn.com
+INHERIT=unpacker xdg-utils tmpfiles systemd
+KEYWORDS=-* ~amd64 ~arm64
+LICENSE=NordVPN
+RDEPEND=net-misc/networkmanager net-vpn/networkmanager-openvpn dev-libs/libxml2 net-dns/libidn2 app-misc/ca-certificates sys-process/procps net-firewall/iptables sys-apps/iproute2 acct-group/nordvpn virtual/tmpfiles
+RESTRICT=strip
+SLOT=0
+SRC_URI=amd64? ( https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_4.3.1_amd64.deb ) arm64? ( https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_4.3.1_arm64.deb )
+_eclasses_=multiprocessing	1e32df7deee68372153dca65f4a7c21f	toolchain-funcs	7e440a20ac11dece04e3334622e6e5da	unpacker	3b4ee72d1e2e0374fd8cd3eddfa00627	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	tmpfiles	9a9814db5a3fbd4f1e921c05297e7735	systemd	a964c0cbe818b5729da1dbfcee5be861
+_md5_=de791f6eb9c986705033b1c4d9dcac6c
