@@ -1,19 +1,20 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2025 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit unpacker xdg-utils tmpfiles systemd
 
 MY_PV=$(ver_rs 3 '-')
 
 DESCRIPTION="NordVPN native client"
-HOMEPAGE="https://nordvpn.com https://gitlab.com/lahouari.dc/nordvpn"
-SRC_URI="https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_${MY_PV}_amd64.deb"
+HOMEPAGE="https://nordvpn.com"
+SRC_URI="amd64? ( https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_${MY_PV}_amd64.deb )
+	arm64? ( https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_${MY_PV}_arm64.deb )"
 
 LICENSE="NordVPN"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 
 # TODO: verify that list of RDEPEND is complete
 RDEPEND="net-misc/networkmanager
